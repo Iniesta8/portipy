@@ -10,6 +10,9 @@ from datetime import datetime
 # Clear the screen
 subprocess.call("clear", shell=True)
 
+# Init colorama to use this script also on windows (lol)
+init()
+
 print Fore.CYAN + "-" * 60
 print "Welcome to portipy, a simple tcp port scanning script"
 print "-" * 60 + "\n" + Fore.RESET
@@ -23,9 +26,6 @@ print "\n...Please wait, scanning remote host " + Fore.YELLOW +\
     remoteServerIP + Fore.RESET + "\n"
 
 t1 = datetime.now()
-
-# Init colorama to use this script also on windows (lol)
-init()
 
 try:
     nm = nmap.PortScanner()

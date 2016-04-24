@@ -10,7 +10,7 @@ A simple port scanning script.
 3. Enter ports to scan, can be separated by ',' or '-' to scan a range of ports
 
 ## Nice features:
-* Colored output!
+* Colored output! :P
 
 ## TODO:
 * Add parser for command line arguments
