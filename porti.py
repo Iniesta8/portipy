@@ -18,18 +18,18 @@ print "Welcome to portipy, a simple tcp port scanning script"
 print "-" * 60 + "\n" + Fore.RESET
 
 # Get hostname to scan
-remoteServer = raw_input("Enter a remote host to scan: ")
-remoteServerIP = gethostbyname(remoteServer)
-remotePorts = raw_input("Enter ports to scan: ")
+remote_server = raw_input("Enter a remote host to scan: ")
+remote_server_IP = gethostbyname(remote_server)
+remote_ports = raw_input("Enter ports to scan: ")
 
 print "\n...Please wait, scanning remote host " + Fore.YELLOW +\
-    remoteServerIP + Fore.RESET + "\n"
+    remote_server_IP + Fore.RESET + "\n"
 
 t1 = datetime.now()
 
 try:
     nm = nmap.PortScanner()
-    nm.scan(remoteServerIP, remotePorts)
+    nm.scan(remote_server_IP, remote_ports)
     for host in nm.all_hosts():
         if nm[host].state() == "up":
             print "State: " + Fore.GREEN + "up" + Fore.RESET
